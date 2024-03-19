@@ -21,7 +21,7 @@ def get_video_comments(video_id, api_key):
 
 
 video_id = 'T0DmHRdtqY0' # Entrez l'ID que l'on peut retrouver à la fin du lien de la vidéo YouTube
-api_key = 'AIzaSyC13US4vwVVPl3vXg3F3WXKBmL9-jgtu5E' # Entrez la clé d'API
+api_key = '' # Entrez la clé d'API
 
 comments = get_video_comments(video_id, api_key)
 
