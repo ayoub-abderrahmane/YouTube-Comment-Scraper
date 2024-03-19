@@ -1,4 +1,8 @@
 from googleapiclient.discovery import build
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_video_comments(video_id, api_key):
     youtube = build('youtube', 'v3', developerKey=api_key)
@@ -20,9 +24,8 @@ def get_video_comments(video_id, api_key):
     return comments
 
 
-video_id = 'T0DmHRdtqY0' # Entrez l'ID que l'on peut retrouver à la fin du lien de la vidéo YouTube
-api_key = '' # Entrez la clé d'API
-
+video_id = os.getenv("id_video") # Entrez l'ID que l'on peut retrouver à la fin du lien de la vidéo YouTube
+api_key = os.getenv("api_key") # Entrez la clé d'API
 comments = get_video_comments(video_id, api_key)
 
 for comment in comments:
